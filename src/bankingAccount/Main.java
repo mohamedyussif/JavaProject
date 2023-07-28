@@ -24,10 +24,11 @@ public class Main {
         SavingAccount savingAccount = new SavingAccount("Mohamedyussif", "456", 2000);
         savingAccount.calculateInterest();
 
-        //create issuechecks account that issue its checks
+        //create git  account that issue its checks
         CheckingAccount checkingAccount = new CheckingAccount("MohamedYoussif", "789", 3000);
         checkingAccount.issueCheck();
 
+        // check the output of any banking process if I entered invalid account number
         bank.deposit("012", 1000);
 
 
