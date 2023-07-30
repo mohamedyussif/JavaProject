@@ -7,7 +7,7 @@ public class BankAccount
     private String accountNumber;
     private double balance;
 
-    //Class construcor
+    //Class constructor
     public BankAccount(String accountHolderName, String accountNumber, double balance) {
         this.accountHolderName = accountHolderName;
         this.accountNumber = accountNumber;
@@ -39,7 +39,10 @@ public class BankAccount
 
     public void deposit(double amount)
     {
-        balance += amount;
+        if (amount <= 0)
+            System.out.println("Please enter value greater than one");
+        else
+            balance += amount;
     }
 
     //method input: amount needed to withdraw
@@ -47,11 +50,10 @@ public class BankAccount
     public void withdraw(double amount)
     {
         if (balance < amount)
-        {
             System.out.println("Your balance is less than the needed amount");
-            return;
-        }
-        balance -= amount;
+        else
+            balance -= amount;
+
     }
 
     //get balance

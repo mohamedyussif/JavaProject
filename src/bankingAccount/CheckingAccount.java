@@ -7,8 +7,16 @@ public class CheckingAccount extends Account
         super(accountHolderName, accountNumber, balance);
     }
 
-    public void issueCheck()
+    //method for issue  check by using inherited withdraw method and use the balance of each account
+    // and pass the amount that want to withdraw to withdraw method as argument to add the interest to the account balance
+    public void issueCheck(double checkAmount)
     {
-        System.out.println("you have a valid check to issue with value" + getBalance());
+        double balance = getBalance();
+        if (balance < checkAmount)
+            System.out.println("Insufficient funds to issue check");
+        else
+            withdraw(checkAmount);
+
+
     }
 }
