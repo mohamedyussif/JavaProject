@@ -6,8 +6,14 @@ public class SavingAccount extends Account
         super(accountHolderName, accountNumber, balance);
     }
 
+    //method for calculating interest by using inherited deposit method and use the balance of each account
+    // and pass the balance * 0.14 to deposit method as argument to add the interest to the account balance
     public void calculateInterest()
     {
-        System.out.println("Your balance after interest = " + (getBalance() + (getBalance() * 0.14)));
+        double balance = getBalance();
+        if (balance < 1)
+            System.out.println("Insufficient funds to issue check");
+        else
+            deposit((balance * 0.14));
     }
 }
